@@ -1,0 +1,7 @@
+{
+  "name": "raceos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
