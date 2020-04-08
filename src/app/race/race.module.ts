@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { RacePageRoutingModule } from './race-routing.module';
 
 import { RacePage } from './race.page';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RacePageRoutingModule
+    RacePageRoutingModule,
+    TranslateModule.forChild()
   ],
   declarations: [RacePage]
 })

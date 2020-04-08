@@ -2,6 +2,13 @@
     "HOME": {
         "TITLE": "RaceOS",
         "SUBTITLE": "Carrera Bahn enhanced"
+    },
+    "PAGES": {
+        "SETTINGS": "Einstellungen",
+        "RACE": "Rennen",
+        "USER": "Benutzer",
+        "CAR": "Autos",
+        "DASHBOARD": "Dashboard"
     }
 
 }

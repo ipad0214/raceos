@@ -13,22 +13,22 @@ import {TranslateService} from '@ngx-translate/core';
 export class AppComponent implements OnInit {
   public appPages = [
     {
-      title: 'Race',
+      title: 'PAGES.RACE',
       url: '/race',
       icon: 'flag'
     },
     {
-      title: 'Users',
+      title: 'PAGES.USER',
       url: '/user',
       icon: 'person'
     },
     {
-      title: 'Cars',
+      title: 'PAGES.CAR',
       url: '/cars',
       icon: 'car-sport'
     },
     {
-      title: 'Settings',
+      title: 'PAGES.SETTINGS',
       url: '/settings',
       icon: 'cog'
     }
@@ -48,9 +48,6 @@ export class AppComponent implements OnInit {
       this.translation.addLangs(['de', 'en']);
       this.translation.use('de');
       this.translation.setDefaultLang('de');
-      this.translation.get('HOME.TITLE').subscribe(res => {
-        console.log(res);
-      });
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
