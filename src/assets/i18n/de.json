@@ -9,6 +9,14 @@
         "USER": "Benutzer",
         "CAR": "Autos",
         "DASHBOARD": "Dashboard"
+    },
+    "SETTINGS": {
+        "IP": "IP - Adresse",
+        "PORT": "Port",
+        "LANG": "Sprache",
+        "ENGLISH": "Englisch",
+        "GERMAN": "Deutsch",
+        "SAVE": "Speichern"
     }
 
 }

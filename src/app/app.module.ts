@@ -12,7 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TranslationService } from './translation.service';
+import { ServerApiService } from './server.api.service';
 
 export function languageLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -37,6 +37,7 @@ export function languageLoader(http: HttpClient) {
   providers: [
     StatusBar,
     SplashScreen,
+    ServerApiService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

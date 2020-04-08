@@ -9,6 +9,15 @@
         "USER": "User",
         "CAR": "Cars",
         "DASHBOARD": "Dashboard"
+    },
+    "SETTINGS": {
+        "IP": "IP - Address",
+        "PORT": "Port",
+        "LANG": "Language",
+        "ENGLISH": "English",
+        "GERMAN": "German",
+        "SAVE": "Save"
     }
+
 
 }

@@ -10,13 +10,14 @@ export class TranslationService {
       private translate: TranslateService
   ) { }
 
-  getDefaultLanguage(){
+  getDefaultLanguage() {
     const language = this.translate.getBrowserLang();
     this.translate.setDefaultLang(language);
     return language;
   }
 
   setLanguage(setLang) {
+    console.log(setLang);
     this.translate.use(setLang);
   }
 

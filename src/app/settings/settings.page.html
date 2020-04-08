@@ -5,5 +5,19 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-item>
+    <ion-label position="floating">{{ 'SETTINGS.IP' | translate }}</ion-label>
+    <ion-input [(ngModel)]="url"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>{{ 'SETTINGS.LANG' | translate }}</ion-label>
+    <ion-select [(ngModel)]="lang" (ionChange)="langChange()">
+      <ion-select-option value="de">{{ 'SETTINGS.GERMAN' | translate }}</ion-select-option>
+      <ion-select-option value="en">{{ 'SETTINGS.ENGLISH' | translate }}</ion-select-option>
+    </ion-select>
+  </ion-item>
 </ion-content>
+
+<ion-footer>
+  <ion-button (click)="save()">{{'SETTINGS.SAVE' | translate }}</ion-button>
+</ion-footer>
