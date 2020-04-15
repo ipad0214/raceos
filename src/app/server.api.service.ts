@@ -8,10 +8,11 @@ import axios from 'axios';
 })
 export class ServerApiService {
   private storage = Plugins.Storage;
-  public ip = this.storage.get({key: 'ip'});
-  public port = this.storage.get({key: 'port'});
+  public ip = '';
+  public port = '';
 
-  constructor() {}
+  constructor() {
+  }
 
   public saveServerCredentials(ip: string, port: string) {
     this.storage.set({key: 'ip', value: ip});
@@ -31,7 +32,36 @@ export class ServerApiService {
       result.ip = ipResult.value;
       result.port = portResult.value;
 
+      this.ip = ipResult.value;
+      this.port = portResult.value;
+
       resolve(result);
+    });
+  }
+
+  public get(route: string): Promise<any> {
+    return new Promise<any>(async (resolve, reject) => {
+      if (this.ip === '') {
+        await this.getServerCredentials();
+      }
+      const url = `http://${this.ip}:${this.port}/${route}`;
+      console.log(url);
+      axios.get(url).then((resp: any) => {
+        resolve(resp.data);
+      });
+    });
+  }
+
+  public post(route: string, data: any): Promise<any> {
+    return new Promise<any>(async (resolve, reject) => {
+      if (this.ip === '') {
+        await this.getServerCredentials();
+      }
+      const url = `http://${this.ip}:${this.port}/${route}`;
+      console.log(url);
+      axios.post(url, data).then((resp: any) => {
+        resolve(resp);
+      });
     });
   }
 }

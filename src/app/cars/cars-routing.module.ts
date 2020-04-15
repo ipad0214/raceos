@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: CarsPage
+  },
+  {
+    path: 'create',
+    loadChildren: () => import('./cars/create/create.module').then( m => m.CreatePageModule)
   }
 ];
 

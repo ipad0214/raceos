@@ -16,6 +16,14 @@
       <ion-select-option value="en">{{ 'SETTINGS.ENGLISH' | translate }}</ion-select-option>
     </ion-select>
   </ion-item>
+  <ion-item>
+    <ion-button (click)="testConnection()">{{ 'SETTINGS.TEST' | translate }}</ion-button>
+  </ion-item>
+  <ion-item *ngIf="heartbeat" text-center>
+    <div class="heartbeat-result">
+      <ion-label>{{ 'SETTINGS.CONNECTION' | translate }} : {{ 'GENERAL.OK' | translate }}</ion-label>
+    </div>
+  </ion-item>
 </ion-content>
 
 <ion-footer>

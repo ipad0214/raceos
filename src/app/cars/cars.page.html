@@ -1,9 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{ "PAGES.CAR" | translate}}</ion-title>
+    <ion-title>{{ "PAGES.CAR" | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-spinner *ngIf="showSpinner" name="crescent"></ion-spinner>
+  <div class="car-list" *ngIf="!showSpinner">
+    <ion-list>
+      <ion-item  *ngFor="let car of cars">
+        <ion-avatar slot="start">
+          <img src="">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ car.name }}</h2>
+          <h3>{{ car.manufacturer }}</h3>
+          <p>{{ car.model }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add" (click)="openCreateModal()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

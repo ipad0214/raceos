@@ -16,8 +16,26 @@
         "LANG": "Language",
         "ENGLISH": "English",
         "GERMAN": "German",
-        "SAVE": "Save"
+        "SAVE": "Save",
+        "TEST": "Test connection",
+        "CONNECTION": "Connection"
+    },
+    "CARS": {
+        "CAR": "Car",
+        "MANUFACTURER": "Manufacturer",
+        "MODEL": "Model",
+        "STEERING": "Steering",
+        "DRIFT": "Drift",
+        "SPEED": "Speed",
+        "ACCELERATION": "Acceleration",
+        "CREATE": {
+            "HEADER": "Neues Auto hinzufügen"
+        }
+    },
+    "GENERAL": {
+        "OK": "Ok",
+        "SAVE": "Save",
+        "CANCEL": "Cancel"
     }
-
 
 }

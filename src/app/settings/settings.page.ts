@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ServerApiService } from '../server.api.service';
 import {TranslationService} from '../translation.service';
+import axios from 'axios';
+import { Plugins } from '@capacitor/core';
 
 @Component({
   selector: 'app-settings',
@@ -10,10 +12,13 @@ import {TranslationService} from '../translation.service';
 export class SettingsPage implements OnInit {
   public url = '';
   public lang = '';
+  public heartbeat = false;
+
+  public toastService = Plugins.Toast;
 
   constructor(
       public serverApiService: ServerApiService,
-      public translationService: TranslationService
+      public translationService: TranslationService,
   ) {
     this.serverApiService.getServerCredentials().then(result => {
       console.log(result);
@@ -24,6 +29,17 @@ export class SettingsPage implements OnInit {
       this.url = `${result.ip}:${result.port}`;
     });
     this.lang = this.translationService.getDefaultLanguage();
+  }
+
+  public testConnection() {
+    axios.get('http://' + this.url + '/ping').then(async resp => {
+      if (resp.data.heartbeat) {
+        await this.toastService.show({
+          text: 'Heartbeat okay -- Go on.'
+        });
+        this.heartbeat = true;
+      }
+    });
   }
 
   public save() {

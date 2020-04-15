@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> {{ 'CARS.CREATE.HEADER' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-edit></app-edit>
+</ion-content>
+
+<ion-footer>
+  <ion-button (click)="cancel()">{{ 'GENERAL.CANCEL' | translate }}</ion-button>
+  <ion-button (click)="save()">{{ 'GENERAL.SAVE' | translate }}</ion-button>
+</ion-footer>
