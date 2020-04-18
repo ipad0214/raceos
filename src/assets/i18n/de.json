@@ -30,6 +30,9 @@
         "ACCELERATION": "Beschleunigung",
         "CREATE": {
             "HEADER": "Neues Auto hinzufügen"
+        },
+        "EDIT": {
+            "HEADER": "Auto bearbeiten"
         }
     },
     "GENERAL": {

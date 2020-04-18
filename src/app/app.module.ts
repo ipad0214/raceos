@@ -15,6 +15,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ServerApiService } from './server.api.service';
 import {CreatePage} from './cars/cars/create/create.page';
 import {CreatePageModule} from './cars/cars/create/create.module';
+import {CarEditPage} from './cars/cars/car-edit/car-edit.page';
+import {CarEditPageModule} from './cars/cars/car-edit/car-edit.module';
 
 export function languageLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -23,12 +25,14 @@ export function languageLoader(http: HttpClient) {
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [
-      CreatePage
+      CreatePage,
+      CarEditPage
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     CreatePageModule,
+    CarEditPageModule,
     IonicModule.forRoot(),
     TranslateModule.forRoot({
       loader: {

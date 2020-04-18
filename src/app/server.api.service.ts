@@ -58,9 +58,20 @@ export class ServerApiService {
         await this.getServerCredentials();
       }
       const url = `http://${this.ip}:${this.port}/${route}`;
-      console.log(url);
       axios.post(url, data).then((resp: any) => {
         resolve(resp);
+      });
+    });
+  }
+
+  public put(route: string, data: any): Promise<any> {
+    return new Promise<any>(async (resolve) => {
+      if (this.ip === '') {
+        await this.getServerCredentials();
+      }
+      const url = `http://${this.ip}:${this.port}/${route}`;
+      axios.put(url, {}).then(resp => {
+
       });
     });
   }

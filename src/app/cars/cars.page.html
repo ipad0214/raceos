@@ -8,7 +8,7 @@
   <ion-spinner *ngIf="showSpinner" name="crescent"></ion-spinner>
   <div class="car-list" *ngIf="!showSpinner">
     <ion-list>
-      <ion-item  *ngFor="let car of cars">
+      <ion-item  *ngFor="let car of cars" (click)="editCar(car.id)">
         <ion-avatar slot="start">
           <img src="">
         </ion-avatar>

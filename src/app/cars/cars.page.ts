@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServerApiService } from '../server.api.service';
 import { ModalController } from '@ionic/angular';
 import { CreatePage } from './cars/create/create.page';
+import {CarEditPage} from './cars/car-edit/car-edit.page';
 
 const route = 'car';
 
@@ -21,16 +22,27 @@ export class CarsPage implements OnInit {
     this.loadAllCars();
   }
 
-  loadAllCars() {
+  public loadAllCars() {
     this.apiService.get(route).then(result => {
       this.showSpinner = false;
       this.cars = result;
     });
   }
 
-  async openCreateModal() {
+  public async openCreateModal() {
     const modal = await this.modalController.create({
       component: CreatePage
+    });
+    return await modal.present();
+  }
+
+  public async editCar(id: number) {
+    const car = this.cars.find(x => x.id === id);
+    const modal = await this.modalController.create({
+      component: CarEditPage,
+      componentProps: {
+        car: car
+      }
     });
     return await modal.present();
   }
