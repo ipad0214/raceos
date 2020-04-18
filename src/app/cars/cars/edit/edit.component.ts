@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-edit',
@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit.component.scss'],
 })
 export class EditComponent implements OnInit {
-  public name = '';
-  public manufacturer = '';
-  public model = '';
-  public steering = 0;
-  public drift = 0;
-  public acceleration = 0;
-  public speed = 0;
+  @Input() public name = '';
+  @Input() public manufacturer = '';
+  @Input() public model = '';
+  @Input() public steering = 0;
+  @Input() public drift = 0;
+  @Input() public acceleration = 0;
+  @Input() public speed = 0;
 
   constructor() { }
 
