@@ -33,6 +33,10 @@ export class CarsPage implements OnInit {
     const modal = await this.modalController.create({
       component: CreatePage
     });
+
+    modal.onDidDismiss().then(() => {
+      this.loadAllCars();
+    });
     return await modal.present();
   }
 
@@ -41,8 +45,11 @@ export class CarsPage implements OnInit {
     const modal = await this.modalController.create({
       component: CarEditPage,
       componentProps: {
-        car: car
+        car
       }
+    });
+    modal.onDidDismiss().then(() => {
+      this.loadAllCars();
     });
     return await modal.present();
   }

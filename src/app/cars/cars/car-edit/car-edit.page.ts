@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {NavParams} from '@ionic/angular';
+import {ModalController, NavParams} from '@ionic/angular';
 import {EditComponent} from '../edit/edit.component';
 import {ServerApiService} from '../../../server.api.service';
 
@@ -14,7 +14,8 @@ export class CarEditPage implements OnInit {
 
   constructor(
       public navParams: NavParams,
-      public apiService: ServerApiService
+      public apiService: ServerApiService,
+      public modalController: ModalController
   ) {}
 
   ngOnInit(): void {
@@ -32,10 +33,17 @@ export class CarEditPage implements OnInit {
 
   public save() {
     const data = this.editor.getData();
-    this.apiService.put('car', data);
+    this.apiService.put('car', this.car.id, data).then(resp => {
+      console.log(resp);
+    });
+    this.modalController.dismiss({
+      dismissed: true
+    });
   }
 
   public cancel() {
-
+    this.modalController.dismiss({
+      dismissed: true
+    });
   }
 }
