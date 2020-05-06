@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ "PAGES.RACE.SETUP" | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>{{ "PAGES.RACE.SETUP.LANE_ONE" | translate }}</ion-label>
+  </ion-item>
+  <ion-select>
+    <ion-select-option *ngFor="let driver of drivers">{{driver.name}}</ion-select-option>
+  </ion-select>
+</ion-content>

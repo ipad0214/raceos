@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ "PAGES.USER.CREATE" | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-user-edit></app-user-edit> 
+</ion-content>
+
+<ion-footer>
+  <ion-button (click)="cancel()">{{ 'GENERAL.CANCEL' | translate }}</ion-button>
+  <ion-button (click)="save()">{{ 'GENERAL.SAVE' | translate }}</ion-button>
+</ion-footer>

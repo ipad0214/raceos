@@ -6,6 +6,7 @@ import {EditComponent} from '../edit/edit.component';
 import {IonicModule} from '@ionic/angular';
 import {FormsModule} from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   {
@@ -15,7 +16,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes), IonicModule, FormsModule, TranslateModule],
+    imports: [RouterModule.forChild(routes), CommonModule, IonicModule, FormsModule, TranslateModule],
     exports: [RouterModule, EditComponent],
     declarations: [
         EditComponent

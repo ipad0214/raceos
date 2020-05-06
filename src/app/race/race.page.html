@@ -1,9 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{ "PAGES.RACE" | translate}}</ion-title>
+    <ion-title>{{ "PAGES.RACE" | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div *ngIf="!activeRace">
+    <ion-button (click)="openRaceSetupModal()">{{ "RACE.SETUP.START_NEW" | translate }}</ion-button>
+  </div>
 </ion-content>

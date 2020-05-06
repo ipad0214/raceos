@@ -17,6 +17,10 @@ import {CreatePage} from './cars/cars/create/create.page';
 import {CreatePageModule} from './cars/cars/create/create.module';
 import {CarEditPage} from './cars/cars/car-edit/car-edit.page';
 import {CarEditPageModule} from './cars/cars/car-edit/car-edit.module';
+import {RaceService} from './race.service';
+import { SetupPageModule } from './race/setup/setup.module';
+import { UserCreatePageModule } from './user/user-create/user-create.module';
+import { UserCreatePage } from './user/user-create/user-create.page';
 
 export function languageLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -26,13 +30,16 @@ export function languageLoader(http: HttpClient) {
   declarations: [AppComponent],
   entryComponents: [
       CreatePage,
-      CarEditPage
+      CarEditPage,
+      UserCreatePage
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     CreatePageModule,
     CarEditPageModule,
+    SetupPageModule,
+    UserCreatePageModule,
     IonicModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
@@ -47,6 +54,7 @@ export function languageLoader(http: HttpClient) {
     StatusBar,
     SplashScreen,
     ServerApiService,
+    RaceService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

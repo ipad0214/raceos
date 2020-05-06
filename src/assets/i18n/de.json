@@ -39,6 +39,12 @@
         "OK": "Ok",
         "SAVE": "Speichern",
         "CANCEL": "Abbrechen"
+    },
+    "RACE": {
+        "SETUP": {
+
+        },
+        "START": "Start"
     }
 
 }
