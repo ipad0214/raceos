@@ -44,7 +44,7 @@ export class ServerApiService {
       if (this.ip === '') {
         await this.getServerCredentials();
       }
-      const url = `http://${this.ip}:${this.port}/${route}`;
+      const url = `http://laptimer.server:4713/${route}`;
       axios.get(url).then((resp: any) => {
         resolve(resp.data);
       });
@@ -56,7 +56,7 @@ export class ServerApiService {
       if (this.ip === '') {
         await this.getServerCredentials();
       }
-      const url = `http://${this.ip}:${this.port}/${route}`;
+      const url = `http://laptimer.server:4713/${route}`;
       axios.post(url, data).then((resp: any) => {
         resolve(resp);
       });
@@ -68,7 +68,7 @@ export class ServerApiService {
       if (this.ip === '') {
         await this.getServerCredentials();
       }
-      const url = `http://${this.ip}:${this.port}/${route}`;
+      const url = `http://laptimer.server:4713/${route}`;
       axios.put(url, data,  { params: { id }}).then(resp => {
         resolve(resp);
       });
