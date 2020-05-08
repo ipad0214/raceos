@@ -17,9 +17,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes), CommonModule, IonicModule, FormsModule, TranslateModule],
-  exports: [RouterModule, UserEditComponent],
-  declarations: [
-    UserEditComponent
-]
+  exports: [RouterModule]
 })
 export class UserCreatePageRoutingModule {}

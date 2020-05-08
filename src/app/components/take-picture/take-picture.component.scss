@@ -1,0 +1,28 @@
+.take-picture {
+    border: 5px dashed rgb(181, 181, 181);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    height: 16em;
+    width: 100%;
+    display: flex;
+    flex-direction: colum;
+    justify-content: center;
+
+    ion-icon {
+        font-size: 128px;
+        color: rgb(181, 181, 181);
+    }
+
+    .plus-container {
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.show-picture {
+    background-color: red;
+    height: 4rem;
+    width: 4rem;
+}

@@ -6,9 +6,41 @@
 
 <ion-content>
   <ion-item>
-    <ion-label>{{ "PAGES.RACE.SETUP.LANE_ONE" | translate }}</ion-label>
+    <h3>{{ "PAGES.RACE.SETUP.LANE_ONE" | translate }}</h3>
   </ion-item>
-  <ion-select>
-    <ion-select-option *ngFor="let driver of drivers">{{driver.name}}</ion-select-option>
+  <ion-item>
+    <ion-label>{{ "PAGES.RACE.SETUP.DRIVER" | translate }}</ion-label>
+  </ion-item>
+  <ion-select [(ngModel)]="driverLaneOne">
+    <ion-select-option *ngFor="let user of users" [value]="user.id">{{user.name}}</ion-select-option>
   </ion-select>
+  <ion-item>
+    <ion-label>{{ "PAGES.RACE.SETUP.CAR" | translate }}</ion-label>
+  </ion-item>
+  <ion-select [(ngModel)]="carLaneOne">
+    <ion-select-option *ngFor="let car of cars" [value]="car.id">{{car.name}}</ion-select-option>
+  </ion-select>
+  <ion-item>
+    <ion-label>{{ "PAGES.RACE.SETUP.LANE_TWO" | translate }}</ion-label>
+  </ion-item>
+  <ion-select [(ngModel)]="driverLaneTwo">
+    <ion-select-option *ngFor="let user of users" [value]="user.id">{{user.name}}</ion-select-option>
+  </ion-select>
+  <ion-item>
+    <ion-label>{{ "PAGES.RACE.SETUP.CAR" | translate }}</ion-label>
+  </ion-item>
+  <ion-select [(ngModel)]="carLaneTwo">
+    <ion-select-option *ngFor="let car of cars" [value]="car.id">{{car.name}}</ion-select-option>
+  </ion-select>
+  <ion-item>
+    <ion-label>{{ "PAGES.RACE.SETUP.DURATION" | translate }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-input type="number" [(ngModel)]="duration"></ion-input>
+  </ion-item>
 </ion-content>
+
+<ion-footer>
+  <ion-button (click)="cancel()">{{ 'GENERAL.CANCEL' | translate }}</ion-button>
+  <ion-button (click)="save()">{{ 'GENERAL.SAVE' | translate }}</ion-button>
+</ion-footer>

@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserEditComponent } from '../user-edit/user-edit.component';
 import { ServerApiService } from 'src/app/server.api.service';
+import { TakePictureComponent } from 'src/app/components/take-picture/take-picture.component';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-user-create',
@@ -10,9 +12,11 @@ import { ServerApiService } from 'src/app/server.api.service';
 export class UserCreatePage implements OnInit {
 
   @ViewChild(UserEditComponent, {static: false}) editor: UserEditComponent;
+  @ViewChild(TakePictureComponent, {static: false}) takePicture: TakePictureComponent;
 
   constructor(
-    public apiService: ServerApiService
+    public apiService: ServerApiService,
+    public modalController: ModalController
   ) { }
 
   ngOnInit() {
@@ -22,14 +26,15 @@ export class UserCreatePage implements OnInit {
     const user = {
       favoriteCar: this.editor.selectedCar,
       name: this.editor.name,
-      img: this.editor.img
+      img: this.takePicture.img
     }
 
-    this.apiService.post("user", user).then(resp => console.log(resp));
+    this.apiService.post("user", user).then(() => this.modalController.dismiss()).catch(err => console.log(err));
   }
 
   public cancel() {
-
+    this.modalController.dismiss({
+      dismissed: true
+    });
   }
-
 }

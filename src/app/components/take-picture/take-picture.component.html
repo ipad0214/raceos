@@ -1,0 +1,8 @@
+<div class="take-picture" (click)="takePicture()" *ngIf="img === ''">
+  <div class="plus-container">
+    <ion-icon name="add-outline"></ion-icon>
+  </div>
+</div>
+<div class="show-picture" *ngIf="img !== ''" (click)="takePicture()">
+  <img src="" />
+</div>

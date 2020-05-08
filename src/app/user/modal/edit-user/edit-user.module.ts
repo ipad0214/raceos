@@ -4,11 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { UserCreatePageRoutingModule } from './user-create-routing.module';
+import { EditUserPageRoutingModule } from './edit-user-routing.module';
 
-import { UserCreatePage } from './user-create.page';
-import { TranslateModule } from '@ngx-translate/core';
+import { EditUserPage } from './edit-user.page';
 import { ComponentsModule } from 'src/app/components/components.modules';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -16,9 +16,9 @@ import { ComponentsModule } from 'src/app/components/components.modules';
     FormsModule,
     IonicModule,
     ComponentsModule,
-    UserCreatePageRoutingModule,
+    EditUserPageRoutingModule,
     TranslateModule.forChild()
   ],
-  declarations: [UserCreatePage]
+  declarations: [EditUserPage]
 })
-export class UserCreatePageModule {}
+export class EditUserPageModule {}

@@ -21,6 +21,8 @@ import {RaceService} from './race.service';
 import { SetupPageModule } from './race/setup/setup.module';
 import { UserCreatePageModule } from './user/user-create/user-create.module';
 import { UserCreatePage } from './user/user-create/user-create.page';
+import { EditUserPageModule } from './user/modal/edit-user/edit-user.module';
+import { EditUserPage } from './user/modal/edit-user/edit-user.page';
 
 export function languageLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -31,12 +33,14 @@ export function languageLoader(http: HttpClient) {
   entryComponents: [
       CreatePage,
       CarEditPage,
-      UserCreatePage
+      UserCreatePage,
+      EditUserPage
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     CreatePageModule,
+    EditUserPageModule,
     CarEditPageModule,
     SetupPageModule,
     UserCreatePageModule,
