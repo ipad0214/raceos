@@ -3,12 +3,25 @@
         "TITLE": "RaceOS",
         "SUBTITLE": "Carrera Track enhanced"
     },
-    "PAGES": {
+    "MENU": {
         "SETTINGS": "Settings",
-        "RACE": "Race",
-        "USER": "User",
+        "USER": "Users",
         "CAR": "Cars",
-        "DASHBOARD": "Dashboard"
+        "DASHBOARD": "Dashboard",    
+        "RACE": "Race"
+    },
+    "PAGES": {
+        "RACE": {
+            "SETUP": {
+                "TITLE": "Create race",
+                "LANE_ONE": "Lane one",
+                "LANE_TWO": "Lane two",
+                "DRIVER": "Driver",
+                "CAR": "Car",
+                "DURATION": "Race duration"
+            },
+            "START": "Start"
+        }
     },
     "SETTINGS": {
         "IP": "IP - Address",
@@ -40,5 +53,4 @@
         "SAVE": "Save",
         "CANCEL": "Cancel"
     }
-
 }

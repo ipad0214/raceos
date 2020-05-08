@@ -3,12 +3,25 @@
         "TITLE": "RaceOS",
         "SUBTITLE": "Carrera Bahn enhanced"
     },
-    "PAGES": {
+    "MENU": {
         "SETTINGS": "Einstellungen",
-        "RACE": "Rennen",
         "USER": "Benutzer",
         "CAR": "Autos",
-        "DASHBOARD": "Dashboard"
+        "DASHBOARD": "Dashboard",    
+        "RACE": "Rennen"
+    },
+    "PAGES": {
+        "RACE": {
+            "SETUP": {
+                "TITLE": "Rennen erstellen",
+                "LANE_ONE": "Spur eins",
+                "LANE_TWO": "Spur zwei",
+                "DRIVER": "Fahrer",
+                "CAR": "Auto",
+                "DURATION": "Rennlänge"
+            },
+            "START": "Start"
+        }
     },
     "SETTINGS": {
         "IP": "IP - Adresse",
@@ -39,12 +52,5 @@
         "OK": "Ok",
         "SAVE": "Speichern",
         "CANCEL": "Abbrechen"
-    },
-    "RACE": {
-        "SETUP": {
-
-        },
-        "START": "Start"
     }
-
 }

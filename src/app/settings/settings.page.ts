@@ -3,6 +3,7 @@ import { ServerApiService } from '../server.api.service';
 import {TranslationService} from '../translation.service';
 import axios from 'axios';
 import { Plugins } from '@capacitor/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-settings',
@@ -19,6 +20,7 @@ export class SettingsPage implements OnInit {
   constructor(
       public serverApiService: ServerApiService,
       public translationService: TranslationService,
+      public router: Router
   ) {
     this.serverApiService.getServerCredentials().then(result => {
       console.log(result);
@@ -45,7 +47,11 @@ export class SettingsPage implements OnInit {
   public save() {
     const splitUrl = this.url.split(':');
     this.serverApiService.saveServerCredentials(splitUrl[0], splitUrl[1]);
-    console.log(splitUrl);
+    this.router.navigate(["/dashboard"]);
+  }
+
+  public cancel() {
+    this.router.navigate(["/dashboard"]);
   }
 
   public langChange() {

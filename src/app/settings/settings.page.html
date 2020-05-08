@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{ "PAGES.SETTINGS" | translate }}</ion-title>
+    <ion-title>{{ "MENU.SETTINGS" | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -27,5 +27,6 @@
 </ion-content>
 
 <ion-footer>
+  <ion-button (click)="cancel()">{{'GENERAL.CANCEL' | translate }}</ion-button>
   <ion-button (click)="save()">{{'SETTINGS.SAVE' | translate }}</ion-button>
 </ion-footer>

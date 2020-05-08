@@ -13,22 +13,22 @@ import {TranslateService} from '@ngx-translate/core';
 export class AppComponent implements OnInit {
   public appPages = [
     {
-      title: 'PAGES.RACE',
+      title: 'MENU.RACE',
       url: '/race',
       icon: 'flag'
     },
     {
-      title: 'PAGES.USER',
+      title: 'MENU.USER',
       url: '/user',
       icon: 'person'
     },
     {
-      title: 'PAGES.CAR',
+      title: 'MENU.CAR',
       url: '/cars',
       icon: 'car-sport'
     },
     {
-      title: 'PAGES.SETTINGS',
+      title: 'MENU.SETTINGS',
       url: '/settings',
       icon: 'cog'
     }
