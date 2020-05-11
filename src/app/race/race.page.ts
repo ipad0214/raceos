@@ -9,6 +9,8 @@ import { SetupPage } from './setup/setup.page';
   styleUrls: ['./race.page.scss'],
 })
 export class RacePage implements OnInit {
+  public activeRace: any;
+
   constructor(
     public raceService: RaceService,
     public modalController: ModalController
@@ -22,8 +24,8 @@ export class RacePage implements OnInit {
       component: SetupPage
     });
 
-    modal.onDidDismiss().then(() => {
-      
+    modal.onDidDismiss().then(activeRace => {
+      this.activeRace = activeRace.data;
     });
     return await modal.present();
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServerApiService } from 'src/app/server.api.service';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-setup',
@@ -18,7 +18,8 @@ export class SetupPage implements OnInit {
 
   constructor(
     public serverApi: ServerApiService,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    public toastCtrl: ToastController
   ) {
     this.serverApi.get("user").then(res => {
       this.users = res;
@@ -33,19 +34,26 @@ export class SetupPage implements OnInit {
   }
 
   public save() {
-    console.log({
+    const raceSetup = {
       driverLaneOne: this.driverLaneOne,
       driverLaneTwo: this.driverLaneTwo,
       carLaneOne: this.carLaneOne,
       carLaneTwo: this.carLaneTwo,
       duration: this.duration
-    });
+    };
 
-    this.modalCtrl.dismiss();
+    this.serverApi.post("race/setup", raceSetup).then(resp => {
+      const { data } = resp;
+      this.modalCtrl.dismiss(data);
+    }).catch(err => {
+      this.toastCtrl.create({
+        message: `Error: ${err}`,
+        duration: 2000
+      }).then(toast => toast.present());
+    });    
   }
 
   public cancel() {
     this.modalCtrl.dismiss();
   }
-
 }

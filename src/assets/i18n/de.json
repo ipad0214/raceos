@@ -18,9 +18,11 @@
                 "LANE_TWO": "Spur zwei",
                 "DRIVER": "Fahrer",
                 "CAR": "Auto",
-                "DURATION": "Rennlänge"
+                "DURATION": "Rennlänge",
+                "START_NEW": "Neues Rennen starten"
             },
-            "START": "Start"
+            "START": "Start",
+            "NO_ACTIVCE_RACE": "Noch kein Rennen erstellt, bitte erstellen Sie ein Rennen um ein Rennen starten zu können"
         }
     },
     "SETTINGS": {

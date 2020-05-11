@@ -18,9 +18,11 @@
                 "LANE_TWO": "Lane two",
                 "DRIVER": "Driver",
                 "CAR": "Car",
-                "DURATION": "Race duration"
+                "DURATION": "Race duration",
+                "START_NEW": "Start new race"
             },
-            "START": "Start"
+            "START": "Start",
+            "NO_ACTIVCE_RACE": "No active race yet, please create a new race to start a race."
         }
     },
     "SETTINGS": {

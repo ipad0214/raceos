@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ServerApiService } from '../server.api.service';
 import {TranslationService} from '../translation.service';
 import axios from 'axios';
-import { Plugins } from '@capacitor/core';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-settings',
@@ -15,12 +15,11 @@ export class SettingsPage implements OnInit {
   public lang = '';
   public heartbeat = false;
 
-  public toastService = Plugins.Toast;
-
   constructor(
       public serverApiService: ServerApiService,
       public translationService: TranslationService,
-      public router: Router
+      public router: Router,
+      public toastCtrl: ToastController
   ) {
     this.serverApiService.getServerCredentials().then(result => {
       console.log(result);
@@ -36,9 +35,7 @@ export class SettingsPage implements OnInit {
   public testConnection() {
     axios.get('http://' + this.url + '/ping').then(async resp => {
       if (resp.data.heartbeat) {
-        await this.toastService.show({
-          text: 'Heartbeat okay -- Go on.'
-        });
+
         this.heartbeat = true;
       }
     });
@@ -47,7 +44,15 @@ export class SettingsPage implements OnInit {
   public save() {
     const splitUrl = this.url.split(':');
     this.serverApiService.saveServerCredentials(splitUrl[0], splitUrl[1]);
-    this.router.navigate(["/dashboard"]);
+    this.toastCtrl.create({
+      message: 'Your settings have been saved.',
+      duration: 2000
+    }).then(toast => {
+      toast.present();
+      this.router.navigate(["/dashboard"]);
+    });
+    
+    
   }
 
   public cancel() {

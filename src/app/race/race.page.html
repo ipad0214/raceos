@@ -6,6 +6,22 @@
 
 <ion-content>
   <div *ngIf="!activeRace">
-    <ion-button (click)="openRaceSetupModal()">{{ "RACE.SETUP.START_NEW" | translate }}</ion-button>
+    <div>
+      <p>{{ "PAGES.RACE.NO_ACTIVCE_RACE" | translate }}</p>
+    </div>
+    <ion-item class="center">
+      <ion-button (click)="openRaceSetupModal()">{{ "PAGES.RACE.SETUP.START_NEW" | translate }}</ion-button>
+    </ion-item>
+  </div>
+  <div *ngIf="activeRace" class="race">
+    <div class="driver leader">
+      <h3>1</h3>
+      <div class="driver-info">
+        <span>{{ "PAGES.RACE.NAME" | translate }}:</span><span>{{this.activeRace.laneOne.driver.name}}</span>
+      </div>
+    </div>
+    <div class="driver second">
+      <h3>2</h3>
+    </div>
   </div>
 </ion-content>

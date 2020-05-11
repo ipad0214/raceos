@@ -1,0 +1,26 @@
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.race {
+    .driver {
+        width: 100%;
+        border: 1px solid black;
+    }
+
+    .leader {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+
+        h3 {
+            height: 4rem;
+            width: 4rem;
+            font-size: 64px;
+            text-align: center;
+        }
+    }
+}
