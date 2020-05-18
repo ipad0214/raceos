@@ -17,6 +17,8 @@ export class RacePage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.raceService.POLLING_INTERVAL = 200;
+    this.raceService.update();
   }
 
   public async openRaceSetupModal() {
@@ -26,6 +28,7 @@ export class RacePage implements OnInit {
 
     modal.onDidDismiss().then(activeRace => {
       this.activeRace = activeRace.data;
+      this.raceService.activeRace = activeRace.data;
     });
     return await modal.present();
   }

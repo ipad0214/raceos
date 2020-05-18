@@ -5,8 +5,6 @@ import {ServerApiService} from './server.api.service';
   providedIn: 'root'
 })
 export class RaceService {
-  public laneOne: any;
-  public laneTwo: any;
   public activeRace: false;
   public duration: 0;
   public currentRound: 0;
@@ -21,21 +19,10 @@ export class RaceService {
   public update() {
       setInterval(() => {
         if(this.activeRace) {
-        this.serverApiService.get('/race/update').then(res => {
+        this.serverApiService.get('race/update').then(res => {
           console.log(res);
         });
       };
     }, this.POLLING_INTERVAL);
-  }
-
-  public setup() {
-    const raceObj = JSON.stringify({
-      laneOne: this.laneOne,
-      laneTwo: this.laneTwo,
-      duration: this.duration
-    });
-    this.serverApiService.post('/race/setup', raceObj).then(res => {
-      console.log(res);
-    });
   }
 }

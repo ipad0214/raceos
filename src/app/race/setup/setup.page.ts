@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServerApiService } from 'src/app/server.api.service';
 import { ModalController, ToastController } from '@ionic/angular';
+import { RaceService } from 'src/app/race.service';
 
 @Component({
   selector: 'app-setup',
