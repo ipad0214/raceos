@@ -1,4 +1,4 @@
-<ion-header>
+ <ion-header>
   <ion-toolbar>
     <ion-title>{{ "MENU.RACE" | translate }}</ion-title>
   </ion-toolbar>
@@ -19,9 +19,22 @@
       <div class="driver-info">
         <span>{{ "PAGES.RACE.NAME" | translate }}:</span><span>{{this.activeRace.laneOne.driver.name}}</span>
       </div>
+      <div>
+        <span>{{ "PAGES.RACE.ROUNDS" | translate }}</span><span>{{this.activeRace.laneOne.rounds}}</span>
+      </div>
     </div>
     <div class="driver second">
       <h3>2</h3>
+      <div class="driver-info">
+        <span>{{ "PAGES.RACE.NAME" | translate }}: </span><span>{{this.activeRace.laneTwo.driver.name}}</span>
+      </div>
+      <div>
+        <span>{{ "PAGES.RACE.ROUNDS" | translate }}: </span><span>{{this.activeRace.laneTwo.rounds}}</span>
+      </div>
     </div>
   </div>
+
+  <ion-button (click)="startRace()">Start Race</ion-button>
+  <ion-button (click)="abortRace()">Abort Race</ion-button>
+  <ion-button (click)="finishRace()">Finish Race</ion-button>
 </ion-content>

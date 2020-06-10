@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
-import {ServerApiService} from './server.api.service';
+import { ServerApiService } from './server.api.service';
+import { resolve } from 'url';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RaceService {
   public activeRace: false;
-  public duration: 0;
-  public currentRound: 0;
-  public POLLING_INTERVAL: 200;
+  public data: any;
+  public POLLING_INTERVAL: number = 200;
 
   constructor(
       public serverApiService: ServerApiService
   ) {
-    this.update();
+
   }
 
   public update() {
@@ -21,6 +21,7 @@ export class RaceService {
         if(this.activeRace) {
         this.serverApiService.get('race/update').then(res => {
           console.log(res);
+          this.data = res;
         });
       };
     }, this.POLLING_INTERVAL);
